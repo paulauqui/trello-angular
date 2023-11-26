@@ -29,6 +29,6 @@ export class NavbarComponent {
   isOpenBody: boolean = false;
 
   constructor() {
-    console.log(this.faClose);
+    // console.log(this.faClose);
   }
 }
