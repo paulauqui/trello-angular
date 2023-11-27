@@ -1,0 +1,45 @@
+<div class="flex flex-col h-screen">
+    <app-navbar></app-navbar>
+
+    <div class="w-full grow bg-sky-600 p-6">
+        <div class="flex gap-4">
+            <div class="w-1/2">
+                <h1 class="text-white">Lista A (Normal scroll)</h1>
+
+                <div class="h-64 w-full border overflow-y-scroll bg-white rounded mt-2">
+                    <div class="flex items-center gap-4" *ngFor="let product of products">
+                        <img class="w-10 h-10 rounded-full" alt="" [src]="product.images[0]" alt="">
+
+                        <div class="font-medium dark:text-white">
+                            <div class="text-sm text-gray-500 dark:text-gray-400">
+                                {{ product.title }}
+                            </div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400">
+                                $ {{ product.price }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-1/2">
+                <h1 class="text-white">Lista B (Virtual scroll)</h1>
+
+                <cdk-virtual-scroll-viewport itemSize="50"
+                    class="h-64 w-full border overflow-y-scroll bg-white rounded mt-2">
+                    <div class="flex items-center gap-4" *cdkVirtualFor="let product of products">
+                        <img class="w-10 h-10 rounded-full" alt="" [src]="product.images[0]" alt="">
+                        <div class="font-medium dark:text-white">
+                            <div class="text-sm text-gray-500 dark:text-gray-400">
+                                {{ product.title }}
+                            </div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400">
+                                $ {{ product.price }}
+                            </div>
+                        </div>
+                    </div>
+                </cdk-virtual-scroll-viewport>
+            </div>
+        </div>
+    </div>
+</div>
