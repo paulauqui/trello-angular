@@ -3,17 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './../navbar/navbar.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-
-interface Product {
-  id: string;
-  title: string;
-  price: number;
-  images: string[];
-}
-
-// @Injectable({
-//   providedIn: 'root',
-// })
+import { Product } from './../../models/product.model';
 
 @Component({
   selector: 'app-scroll',
