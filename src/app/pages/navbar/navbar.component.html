@@ -22,25 +22,24 @@
 
         <div class="flex items-center">
             <div class="flex space-x-3">
-            <button type="button" class="text-white">
-                <fa-icon [icon]="faBell"></fa-icon>
-            </button>
-            <button type="button" class="text-white">
-                <fa-icon [icon]="faInfoCircle"></fa-icon>
-            </button>
-            <button type="button" class="flex rounded-full" aria-expanded="false" type="button" (click)="isOpen = !isOpen" 
-            cdkOverlayOrigin
-            #menuOverlay="cdkOverlayOrigin"
-            >
-                <img class="w-8 h-8 rounded-full" src="https://api.lorem.space/image/face?w=400&h=400"
-                    alt="user photo" />
-            </button>
+                <button type="button" class="text-white">
+                    <fa-icon [icon]="faBell"></fa-icon>
+                </button>
+                <button type="button" class="text-white">
+                    <fa-icon [icon]="faInfoCircle"></fa-icon>
+                </button>
+                <button type="button" class="flex rounded-full" aria-expanded="false" type="button"
+                    (click)="isOpen = !isOpen" cdkOverlayOrigin #menuOverlay="cdkOverlayOrigin">
+                    <img class="w-8 h-8 rounded-full" src="https://api.lorem.space/image/face?w=400&h=400"
+                        alt="user photo" />
+                </button>
             </div>
         </div>
     </div>
 </nav>
 
-<ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="menuOverlay" [cdkConnectedOverlayOpen]="isOpen">
+<ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="menuOverlay" [cdkConnectedOverlayOpen]="isOpen"
+    (overlayOutsideClick)="isOpen = !isOpen">
     <div class="z-50 my-4 w-60 text-base list-none bg-white rounded divide-y divide-gray-100 shadow">
         <div class="py-3 px-4 flex justify-between">
             <span class="block text-sm text-center text-gray-900">Account</span>
@@ -65,7 +64,8 @@
                     class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600">Activity</a>
             </li>
             <li>
-                <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600">Cards</a>
+                <a href="#"
+                    class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600">Cards</a>
             </li>
             <li>
                 <a href="#"

@@ -1,7 +1,9 @@
 <div class="w-screen h-screen bg-gray-50 relative">
     <div class="absolute w-full h-full hidden sm:block">
-        <img loading="lazy" class="absolute w-60 lg:w-96 left-0 bottom-0" src="/assets/svg/login-bg-left.svg" alt="bg left">
-        <img loading="lazy" class="absolute w-60 lg:w-96 left-0 bottom-0" src="/assets/svg/login-bg-rigth.svg" alt="bg rigth">
+        <img loading="lazy" class="absolute w-60 lg:w-96 left-0 bottom-0" src="/assets/svg/login-bg-left.svg"
+            alt="bg left">
+        <img loading="lazy" class="absolute w-60 lg:w-96 left-0 bottom-0" src="/assets/svg/login-bg-rigth.svg"
+            alt="bg rigth">
     </div>
     <div class="relative w-full sm:w-7/12 md:w-6/12 lg:w-4/12 m-auto">
         <header class="pt-6 pb-2 flex justify-center">
@@ -14,13 +16,15 @@
                 </h1>
                 <form novalidate class="space-y-4">
                     <div class="relative">
-                        <input type="email" placeholder="Enter Email" class="w-full rounded bg-gray-100 border-2 border-gray-300">
+                        <input type="email" placeholder="Enter Email"
+                            class="w-full rounded bg-gray-100 border-2 border-gray-300">
                     </div>
                     <div class="relative">
-                        <input type="password" placeholder="Enter password" class="w-full rounded bg-gray-100 border-2 border-gray-300">
+                        <input type="password" placeholder="Enter password"
+                            class="w-full rounded bg-gray-100 border-2 border-gray-300">
                     </div>
                     <div>
-                        <app-btn [typeBtn]="'submit'" [color]="'red'">Log in</app-btn> 
+                        <app-btn [typeBtn]="'submit'" [color]="'danger'">Log in</app-btn>
                     </div>
                 </form>
             </div>

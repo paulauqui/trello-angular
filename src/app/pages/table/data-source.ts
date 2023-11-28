@@ -1,15 +1,18 @@
 import { CollectionViewer, DataSource } from '@angular/cdk/collections';
 import { Product } from './../../models/product.model';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { query } from '@angular/animations';
 
 export class DataSourceProducts extends DataSource<Product> {
   data = new BehaviorSubject<Product[]>([]);
+  originalData: Product[] = [];
 
   connect(): Observable<Product[]> {
     return this.data;
   }
 
   init(products: Product[]) {
+    this.originalData = products;
     this.data.next(products);
   }
 
@@ -33,6 +36,15 @@ export class DataSourceProducts extends DataSource<Product> {
 
       this.data.next(products);
     }
+  }
+
+  find(query: string) {
+    const newProducts = this.originalData.filter((item) => {
+      const word = `${item.id}-${item.title}-${item.price}`;
+      return word.toLowerCase().includes(query.toLowerCase());
+    });
+
+    this.data.next(newProducts);
   }
 
   disconnect() {}
